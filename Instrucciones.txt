@@ -1,0 +1,80 @@
+1)Flashear en tarjeta micro SD o unidad SSD Raspberry Pi OS Lite 64 bit
+Recomendado emplear Raspberry Pi Imager https://www.raspberrypi.com/software/ (Disponible para Windows, Mac OS y Linux)
+
+2) Una vez iniciado Raspberry Pi OS Lite, verificar que se tiene WiFi y luego ingresar a la herramienta para selección del escritorio
+ sudo tasksel
+Seleccionar KDE Plasma
+
+3) Instalar gestor de sesiones lightdm y corrector ortográfico en español hunspell  
+ sudo apt install lightdm hunspell-es
+Seleccionar gestor por defecto lightdm
+
+4) Ingresar a raspi-config
+ sudo raspi-config
+Configurar locale al idioma y país de cada uno, utilizar codificación utf-8
+Configurar  Boot/Autologin y seleccionar B3 o B4 (sin o con autologin)
+Finalizar raspi-config con finish y reiniciar la Raspberry Pi
+
+4) Dentro de KDE Plasma seleccionar Preferencias del sistema
+Configurar las traducciones de Plasma -Añadir idioma- seleccionar español
+En corrector ortográfico seleccionar español y tu país
+Fijar la terminal, el navegador web o cualquier otra aplicación con click derecho en la aplicación y seleccionar añadir al panel
+Con click derecho sobre el navegador y gestor Konqueror seleccionar liberar del gestor de tareas
+
+
+5) Mejorar el rendimiento general al desactivar el compositor
+Ir a preferencias del sistema, en Hardware seleccionar pantalla y monitor, seleccionar Compositor y desmarcar Activar el compositor durante el inicio
+Reiniciar para que se efectúen los cambios
+
+6) Cambiar fondo de escritorio
+En GitHub se puede descargar el fondo y estas instrucciones que lees
+https://github.com/ComputadorasySensores/Capitulo105
+Se descarga desde el botón verde Code y se debe descomprimir
+Click derecho sobre el escritorio y seleccionar configurar el escritorio y la imagen de fondo
+Seleccionar añadir imagen y seleccionarlo desde el lugar donde se descargó
+Se agrega a los fondos ya disponibles, lo seleccionamos aplicar y aceptar
+
+7) Cambiar tema global y paquete de íconos
+Desde la terminal instalar el motor gtk murrine
+ sudo apt install gtk2-engines-murrine
+Para instalar el tema Materia y los íconos Papirus
+ sudo apt install materia-kde materia-gtk-theme papirus-icon-theme
+Seleccionar como tema Materia en Preferencias del sistema y Tema global
+Los íconos Papirus se instalan automáticamente, se puede verificar en Preferencias del sistema y luego íconos
+
+8) Overclocking
+Solo se debe realizar el aumento de la frecuencia del reloj si se cuenta con buena disipación del calor (disipador + cooler)
+Ingresar con el Gestor Dolphin a /boot/config.txt
+Abrir el archivo con un editor de texto, por ejemplo Kate
+Desplazarse hasta la línea
+#arm_freq=800, quitar símbolo de numeral, cambiar frecuencia y agregar debajo 2 líneas como se muestra:
+
+arm_freq=2048
+v3d_freq=750
+over_voltage=6
+
+Guardar el archivo editado y reiniciar el equipo.
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
